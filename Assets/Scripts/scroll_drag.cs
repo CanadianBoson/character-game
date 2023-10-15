@@ -47,7 +47,6 @@ public class ScrollDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private void Awake()
     {
         ruleLoader = GameObject.FindObjectOfType<CombinationRuleLoader>();
-        //scrollCharPrefab = Resources.Load<GameObject>("ScrollChar");
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -158,9 +157,9 @@ public class ScrollDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
                     scrollDragInitializer.UpdateScrollDragsFromParameterList(true);
 
-                    //BoxCollider2D boxCollider = resultObject.GetComponent<BoxCollider2D>();
-                    //boxCollider.size = new Vector2(rule.wordPair.charLen * 30, boxCollider.size.y);
-                    //boxCollider.offset = new Vector2(rule.wordPair.charLen * 15, boxCollider.offset.y);
+                    BoxCollider2D boxCollider = resultObject.GetComponent<BoxCollider2D>();
+                    boxCollider.size = new Vector2(rule.wordPair.charLen * 30, boxCollider.size.y);
+                    boxCollider.offset = new Vector2(rule.wordPair.charLen * 15, boxCollider.offset.y);
                 }
             }
 
