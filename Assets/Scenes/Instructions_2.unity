@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000040531, y: -41.885}
-  m_SizeDelta: {x: 576.0217, y: 166.4541}
+  m_AnchoredPosition: {x: 0.5539, y: -55.179}
+  m_SizeDelta: {x: 577.1295, y: 193.0421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &241463315
 MonoBehaviour:
@@ -183,11 +183,12 @@ MonoBehaviour:
   m_text: 'In the game stage, you''re on your own! You will be given words that you
     made in the sandbox and you have a set number of tries to regenerate it. Your
     score is the number of words you recreate correctly. Use the "Clear" button to
-    clear the screen, "Next Word" to skip ahead, and  "Load Save" to reload progress.
+    clear the screen, "Next Word" to skip ahead, "English On/Off" to temporarily
+    show translations of characters, and  "Load Save" to reload progress, which is
+    saved whenever you jump to a new screen.
 
 
-    Good
-    luck!'
+    Good luck!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -277,6 +278,7 @@ GameObject:
   - component: {fileID: 274081388}
   - component: {fileID: 274081387}
   - component: {fileID: 274081391}
+  - component: {fileID: 274081392}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -363,6 +365,7 @@ RectTransform:
   - {fileID: 793140698}
   - {fileID: 241463314}
   - {fileID: 1924822828}
+  - {fileID: 755662339}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -382,6 +385,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a1118d227e547faa78f81e3993c580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &274081392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274081386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577490b544d09497ba95b60c204a8780, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutUIImage: {fileID: 755662337}
+  fadeSpeed: 0.4
 --- !u!1 &525063528
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +467,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &755662336
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 755662339}
+  - component: {fileID: 755662338}
+  - component: {fileID: 755662337}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &755662337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755662336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &755662338
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755662336}
+  m_CullTransparentMesh: 1
+--- !u!224 &755662339
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755662336}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 274081390}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.000030517578, y: -0.000015258789}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &793140697
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000038147, y: 106}
+  m_AnchoredPosition: {x: 0.0000038147, y: 141}
   m_SizeDelta: {x: 436.7486, y: 129.3168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &793140699

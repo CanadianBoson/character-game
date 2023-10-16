@@ -51,14 +51,7 @@ public class StartMenu : MonoBehaviour
             }
         }
         
-        if (dynamicScenes.Contains(sceneName) || currentScene.name == "Menu")
-        {
-            StartCoroutine(GetComponentInParent<Canvas>().GetComponent<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, sceneName));
-        }
-        else 
-        {
-            SceneManager.LoadScene(sceneName);
-        }
+        StartCoroutine(GetComponentInParent<Canvas>().GetComponent<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, sceneName));
     }
 
     public void ClearScreen ()
@@ -125,4 +118,12 @@ public class StartMenu : MonoBehaviour
         }
         NextWord(); 
     }
+
+    public void TranslateToggle ()
+    {
+        foreach (ScrollDrag drag in GetComponentInParent<Canvas>().GetComponentsInChildren<ScrollDrag>())
+        {
+            drag.translate = !drag.translate;
+        }
+    } 
 }

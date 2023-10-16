@@ -28,6 +28,7 @@ public class ScrollDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public AudioSource audioSource;
     public GameObject ScrollChar;
     public Transform contentParent;
+    public bool translate = false;
 
     
     private void Start()
@@ -67,6 +68,18 @@ public class ScrollDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             textField = GameObject.Find("HoverText").GetComponent<TextMeshProUGUI>();
             textField.text = wordPair.word;
         }
+        else if (SceneManager.GetActiveScene().name == "Game")
+        {
+            textField = GameObject.Find("Translation").GetComponent<TextMeshProUGUI>();
+            if (translate)
+            {
+                textField.text = "Translation: " + wordPair.word;
+            }
+            else
+            {
+                textField.text = "";
+            }
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -77,7 +90,7 @@ public class ScrollDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public void OnEndDrag(PointerEventData eventData)
     {
         isDragging = false;
-        if (SceneManager.GetActiveScene().name == "Tutorial")
+        if (SceneManager.GetActiveScene().name == "Tutorial" || SceneManager.GetActiveScene().name == "Game")
         {
             textField.text = "";
         }
