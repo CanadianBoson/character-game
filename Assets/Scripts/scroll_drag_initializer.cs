@@ -22,7 +22,7 @@ public class ScrollDragInitializer : MonoBehaviour
     private void Start()
     {
         currentScene = SceneManager.GetActiveScene();
-        string characterList = PlayerPrefs.GetString("characterList" + currentScene.name);
+        string characterList = PlayerPrefs.GetString("characterListTutorial");
 
         if (!string.IsNullOrEmpty(characterList))
         {
@@ -74,6 +74,10 @@ public class ScrollDragInitializer : MonoBehaviour
         GameObject.Find("ScoreCounter").GetComponent<TextMeshProUGUI>().text = 
             GetComponentInParent<Canvas>().GetComponent<GameUpdater>().successWords.Count.ToString();
         }
+
+        Vector2 newSize = GetComponent<RectTransform>().sizeDelta;
+        newSize.y = 50 * parameterList.Count;
+        GetComponent<RectTransform>().sizeDelta = newSize;
     }
 }
 

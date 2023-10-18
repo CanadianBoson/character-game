@@ -1062,8 +1062,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u8C1C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5ec0d3ca4f40e41c4893d871a85dabba, type: 2}
-  m_sharedMaterial: {fileID: 6059100469349635653, guid: 5ec0d3ca4f40e41c4893d871a85dabba, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7380433b61af04b45a089f396ae6e94c, type: 2}
+  m_sharedMaterial: {fileID: 2619318360250387790, guid: 7380433b61af04b45a089f396ae6e94c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
